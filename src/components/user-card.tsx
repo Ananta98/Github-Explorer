@@ -17,10 +17,11 @@ const UserCard: React.FC<User> = ({ id, login, avatar_url }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [repos, setRepos] = useState<Repository[]>([]);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
 
   const fetchRepos = async (username: string) => {
     try {
+      setError(null);
       setLoading(true);
       const response: Repository[] = await fetch(
         `https://api.github.com/users/${username}/repos`

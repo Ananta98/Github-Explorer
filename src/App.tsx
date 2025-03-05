@@ -13,22 +13,28 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [query, setQuery] = useState<string>("");
   const [users, setUsers] = useState<User[]>([]);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSearch = async (search: string) => {
+  const handleSearch = async (searchQuery: string) => {
     try {
+      if (!searchQuery.trim()) {
+        setUsers([]);
+        return;
+      }
+      setError(null);
       setLoading(true);
       const response = await fetch(
-        `https://api.github.com/search/users?q=${search}&per_page=5`
+        `https://api.github.com/search/users?q=${searchQuery}&per_page=5`
       );
       const json: UserSearchResponse = await response.json();
-      setUsers(json.items);
+      setUsers(json.items || []);
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
       } else {
         setError("An unknown error occurred");
       }
+      setUsers([]);
     } finally {
       setLoading(false);
     }
