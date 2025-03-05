@@ -7,6 +7,7 @@ import { User, UserSearchResponse } from "./lib/types";
 import ErrorAlert from "./components/error-alert";
 import UserSkeletonCard from "./components/user-skeleteon-card";
 import EmptyState from "./components/empty-state";
+import { ModeToggle } from "./components/mode-toggle";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -35,7 +36,10 @@ function App() {
 
   return (
     <div className="container mx-auto max-w-2xl p-4 flex flex-col gap-4">
-      <h1 className="text-3xl font-bold">Github Explorer</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Github Explorer</h1>
+        <ModeToggle />
+      </div>
       <div className="flex flex-col sm:flex-row gap-2">
         <Input
           type="text"

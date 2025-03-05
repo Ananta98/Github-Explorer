@@ -18,7 +18,7 @@ const RepositoryCard: React.FC<Repository> = ({
   return (
     <Card
       key={id}
-      className="flex flex-col p-4 justify-between bg-white border shadow-xl"
+      className="flex flex-col p-4 justify-between border shadow-xl"
     >
       <div className="flex flex-col gap-2">
         <span className="flex gap-2 items-center">

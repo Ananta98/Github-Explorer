@@ -3,7 +3,7 @@ import { Card } from "./ui/card";
 
 const RepositorySkeletonCard: React.FC = () => {
   return (
-    <Card className="flex flex-col p-4 justify-between bg-white border shadow-xl">
+    <Card className="flex flex-col p-4 justify-between border shadow-xl">
       <div className="flex flex-col gap-2">
         <span className="flex gap-2 items-center">
           <Skeleton className="h-4 w-[150px]" />
