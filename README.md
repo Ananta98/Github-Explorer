@@ -1,6 +1,6 @@
 # GitHub Explorer
 
-A React + TypeScript application that allows user .
+A React + TypeScript application that allows user to search Github users and also their repositories.
 
 ## Features
 
@@ -23,5 +23,9 @@ A React + TypeScript application that allows user .
    git clone https://github.com/<your-username>/github-user-search.git
    cd github-user-search
    ```
-2. npm install
-3. npm run dev
+2. ```bash 
+   npm install
+   ```
+3. ```bash 
+   npm run dev
+   ```
