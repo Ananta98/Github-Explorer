@@ -7,7 +7,7 @@ A React + TypeScript application that allows user to search Github users and als
 - Search for up to 5 users by username via search box (via github api https://docs.github.com/en/rest/search)
 - Click on a user to load and display user's repositories
 - Built with [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/docs)
-- Deployed on Vercel
+- Deployed on Vercel via this link: github-explorer-eight.vercel.app
 
 ## Usage
 
