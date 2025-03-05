@@ -13,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [query, setQuery] = useState<string>("");
   const [users, setUsers] = useState<User[]>([]);
+  const [search, setSearch] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
   const handleSearch = async (searchQuery: string) => {
@@ -23,6 +24,7 @@ function App() {
       }
       setError(null);
       setLoading(true);
+      setSearch(searchQuery);
       const response = await fetch(
         `https://api.github.com/search/users?q=${searchQuery}&per_page=5`
       );
@@ -51,8 +53,8 @@ function App() {
           type="text"
           placeholder="Please input this search..."
           className="w-full"
+          value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSearch(query)}
         />
         <Button onClick={() => handleSearch(query)}>
           <Search /> Search
@@ -73,7 +75,9 @@ function App() {
         <ErrorAlert error={error} />
       ) : users && users.length > 0 ? (
         <div className="flex flex-col gap-2">
-          <h2 className="text-muted-foreground">Showing users for "{query}"</h2>
+          <h2 className="text-muted-foreground">
+            Showing users for "{search}"
+          </h2>
           {users.map((user) => (
             <UserCard key={user.id} {...user} />
           ))}
