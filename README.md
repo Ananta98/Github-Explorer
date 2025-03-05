@@ -8,6 +8,7 @@ A React + TypeScript application that allows user to search Github users and als
 - Click on a user to load and display user's repositories
 - Built with [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/docs)
 - Deployed on Vercel via this link: github-explorer-eight.vercel.app
+- Can switch theme to dark mode or light mode
 
 ## Usage
 
@@ -20,12 +21,14 @@ A React + TypeScript application that allows user to search Github users and als
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/<your-username>/github-user-search.git
+   git clone git@github.com:Ananta98/Github-Explorer.git
    cd github-user-search
    ```
-2. ```bash 
+2. Install Depedencies
+   ```bash 
    npm install
    ```
-3. ```bash 
+3. Run locally
+   ```bash 
    npm run dev
    ```
